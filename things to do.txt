@@ -1,0 +1,31 @@
+user: 
+student - my profile(change own pass),logout
+          transactions history
+          recharge history
+   
+admins - my profile(change own pass),logout
+    1.register office
+            user - 
+                create(email,pass,{stu_id,rfid})
+                profile search -> assign type, re/issue card, active/disable
+                        transactions history- card recharge and acadenic expenses transactions view (table)
+            
+            
+    2.accounts
+            students list - block/unblock    
+            recharge
+            card transactions history
+            payment -academic, others
+            
+
+    3.library
+            add books - name, author, publisher, isbn, lost fine, qty 
+            late fine per day 
+            payment - late fine, lost
+            transactions history related to library
+
+
+    4.cafeteria
+            add canteen products - prod , price,  qty
+            make payment
+            transactions history related to cafe
