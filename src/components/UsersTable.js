@@ -1,4 +1,4 @@
-import Sidebar from "./Sidebar";
+
 import SwitcherThree from "./SwitcherThree";
 
 const UsersTable = () => {
