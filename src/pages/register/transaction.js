@@ -1,7 +1,7 @@
 import SearchUser from "../../components/SearchUser";
 import Sidebar from "../../components/Sidebar";
 import TransactionHistory from "../../components/TransactionHistoryAdmin";
-import UsersTable from "../../components/UsersTable";
+import UserCard from "../../components/UserCard";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       </div>
       <div className="w-4/5 p-6">
         <SearchUser />
-        <UsersTable />
+        <UserCard />
         <TransactionHistory />
       </div>
     </div>

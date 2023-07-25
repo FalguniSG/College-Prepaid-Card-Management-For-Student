@@ -1,5 +1,5 @@
 import Link from 'next/link'
-const Sidebar = () => {
+const SidebarCafe = () => {
     return (
       <div className="fixed bg-gray-800 text-white w-1/5 h-full p-6 text-xl">      
         <svg xmlns="http://www.w3.org/2000/svg" 
@@ -14,16 +14,15 @@ const Sidebar = () => {
         </svg>
          
         <ul className="space-y-4 ">
-          <li><Link className="hover:text-gray-300" href="#">Home</Link></li>
-          <li><Link className="hover:text-gray-300" href="#accounts/home">Add/Remove Item</Link></li>
-          <li><Link className="hover:text-gray-300" href="#profile">Sell</Link></li>
-          <li><Link className="hover:text-gray-300" href="#profile">Transaction List</Link></li>
-          <li><Link className="hover:text-gray-300" href="#profile">My Account</Link></li>
-          <li><Link className="hover:text-gray-300" href="#">Logout</Link></li>
+          <li><Link className="hover:text-gray-300" href="/cafe/additem">Add Item</Link></li>
+          <li><Link className="hover:text-gray-300" href="/cafe/stock">Update Stock</Link></li>
+          <li><Link className="hover:text-gray-300" href="/cafe/sell">Sell</Link></li>
+          <li><Link className="hover:text-gray-300" href="/cafe/profile">My Account</Link></li>
+          <li><Link className="hover:text-gray-300" href="/cafe/logout">Logout</Link></li>
         </ul>
       </div>
     );
   };
   
-  export default Sidebar;
+  export default SidebarCafe;
   

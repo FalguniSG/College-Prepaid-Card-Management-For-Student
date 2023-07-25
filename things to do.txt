@@ -9,7 +9,13 @@ admins - my profile(change own pass),logout
                 create(email,pass,{stu_id,rfid})
                 profile search -> assign type, re/issue card, active/disable
                         transactions history- card recharge and acadenic expenses transactions view (table)
-            
+                **Transaction List 
+                        ID Search
+                        FILTERS: 
+                                Date range
+                                Counter Type
+                                        Transaction type 
+
             
     2.accounts
             students list - block/unblock    
@@ -29,3 +35,4 @@ admins - my profile(change own pass),logout
             add canteen products - prod , price,  qty
             make payment
             transactions history related to cafe
+        **item removal from stock

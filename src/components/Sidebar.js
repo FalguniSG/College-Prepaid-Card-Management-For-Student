@@ -14,7 +14,7 @@ const Sidebar = () => {
         </svg>
          
         <ul className="space-y-4 ">
-          <li><Link className="hover:text-gray-300" href="/">Home</Link></li>
+          <li><Link className="hover:text-gray-300" href="/register/home">User</Link></li>
           <li><Link className="hover:text-gray-300" href="/register/createadmin">Create Admin Account</Link></li>
           <li><Link className="hover:text-gray-300" href="/register/create">Create Student Account</Link></li>
           {/* <li><Link className="hover:text-gray-300" href="/register/card">Issue Card</Link></li> */}
