@@ -1,8 +1,7 @@
-import SearchUser from "../../components/SearchUser.js";
+import SearchUser from "../../components/SearchUser";
 import Sidebar from "../../components/Sidebar";
-import UsersTable from "../../components/UsersTable.js";
-
-
+import TransactionHistory from "../../components/TransactionHistoryAdmin";
+import UsersTable from "../../components/UsersTable";
 
 const Home = () => {
   return (
@@ -13,7 +12,7 @@ const Home = () => {
       <div className="w-4/5 p-6">
         <SearchUser />
         <UsersTable />
-     
+        <TransactionHistory />
       </div>
     </div>
   );

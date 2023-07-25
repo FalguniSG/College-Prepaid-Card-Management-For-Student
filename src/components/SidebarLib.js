@@ -14,13 +14,14 @@ const Sidebar = () => {
         </svg>
          
         <ul className="space-y-4 ">
-          <li><Link className="hover:text-gray-300" href="/">Home</Link></li>
-          <li><Link className="hover:text-gray-300" href="/register/createadmin">Create Admin Account</Link></li>
-          <li><Link className="hover:text-gray-300" href="/register/create">Create Student Account</Link></li>
-          {/* <li><Link className="hover:text-gray-300" href="/register/card">Issue Card</Link></li> */}
-          <li><Link className="hover:text-gray-300" href="/register/transaction">Transaction List</Link></li>
-          <li><Link className="hover:text-gray-300" href="/register/profile">My Profile</Link></li>
-          <li><Link className="hover:text-gray-300" href="../">Logout</Link></li>
+          <li><Link className="hover:text-gray-300" href="#">Home</Link></li>
+          <li><Link className="hover:text-gray-300" href="#">Late Fee</Link></li>
+          <li><Link className="hover:text-gray-300" href="#accounts/home">Add Books</Link></li>
+          <li><Link className="hover:text-gray-300" href="#accounts/home">Remove Books</Link></li>
+          <li><Link className="hover:text-gray-300" href="#accounts/home">Issue/Return Book</Link></li>
+          <li><Link className="hover:text-gray-300" href="#accounts/home">Transaction List</Link></li>
+          <li><Link className="hover:text-gray-300" href="#profile">My Profile</Link></li>
+          <li><Link className="hover:text-gray-300" href="#">Logout</Link></li>
         </ul>
       </div>
     );
