@@ -8,7 +8,7 @@ const UsersTable = () => {
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
-            <th className=" py-4 px-8 font-medium text-black  xl:pl-11">
+              <th className=" py-4 px-8 font-medium text-black  xl:pl-11">
                 User Type
               </th>
               <th className=" py-4 px-8 font-medium text-black  xl:pl-11">
@@ -54,12 +54,12 @@ const UsersTable = () => {
               
               <td className="border-b border-[#eee] py-5 px-4 ">
                 <p className="inline-flex rounded-full bg-success bg-opacity-10 py-1 px-3 text-sm font-medium text-success">
-                 1528555621
+                  1528555621
                 </p>
               </td>
               <td className="border-b border-[#eee] py-5 px-4 ">
                 <p className="inline-flex rounded-full bg-success bg-opacity-10 py-1 px-3 text-sm font-medium text-success">
-                 62.95
+                  62.95
                 </p>
               </td>
               {/* <td className="border-b underline text-teal-800 border-[#eee] py-5 px-4 ">

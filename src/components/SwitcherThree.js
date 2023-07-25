@@ -20,14 +20,13 @@ const SwitcherThree = () => {
           />
           <div className="block h-8 w-14 rounded-full bg-meta-9 bg-blue-950"></div>
           <div
-            className={`dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white fill-white transition ${
-              enabled && '!right-1 !translate-x-full !bg-primary'
-            }`}
+            className={`dot absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white fill-white transition ${enabled && '!right-1 !translate-x-full !bg-primary'
+              }`}
           >
             <span className={` hidden ${enabled && '!block'}`}>
               <svg
                 className="fill-green-600 h-4 w-4 stroke-current  "
-                
+
                 viewBox="0 0 11 8"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
