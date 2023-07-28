@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title> My App </title>
+        <title> RBUAPS </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -1,19 +1,19 @@
-import CreateAdmin from "../../components/CreateAdmin";
+import ViewAdmin from "../../components/AdminProfileView";
 import Sidebar from "../../components/Sidebar";
 
-const createstudent = () => {
+const Profile = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 
-            <Sidebar />
+            <Sidebar /> 
         </div>
         <div className="w-4/5 p-6">
-          <CreateAdmin />
+            <ViewAdmin />
        
         </div>
       </div>
     );
   };
-
   
-export default createstudent;
+  export default Profile;
+  

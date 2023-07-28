@@ -1,7 +1,7 @@
 import ViewAdmin from "../../components/AdminProfileView";
 import SidebarCafe from "../../components/SidebarCafe";
 
-const profile = () => {
+const Profile = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 
@@ -15,5 +15,5 @@ const profile = () => {
     );
   };
   
-  export default profile;
+  export default Profile;
   

@@ -3,7 +3,7 @@ import CafeStockTable from "../../components/CafeStockTable";
 import SidebarCafe from "../../components/SidebarCafe";
 import StockUpdate from "../../components/StockItem";
 
-const updatestock = () => {
+const UpdateStock = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 
@@ -18,4 +18,4 @@ const updatestock = () => {
   };
 
   
-export default updatestock;
+export default UpdateStock;

@@ -2,7 +2,7 @@ import CafeItemInput from "../../components/AddItem";
 import AddItem from "../../components/AddItem";
 import SidebarCafe from "../../components/SidebarCafe";
 
-const newitem = () => {
+const NewItem = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 
@@ -17,4 +17,4 @@ const newitem = () => {
   };
 
   
-export default newitem;
+export default NewItem;

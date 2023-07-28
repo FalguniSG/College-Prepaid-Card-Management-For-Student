@@ -1,4 +1,4 @@
-const ViewAdmin = ({ user }) => {
+const AdminProfileView = ({ user }) => {
     return (
         <div className="max-w-md mx-auto bg-white p-6 shadow-md rounded-md">
           
@@ -25,5 +25,5 @@ const ViewAdmin = ({ user }) => {
     };
     
   
-  export default ViewAdmin;
+  export default AdminProfileView;
   

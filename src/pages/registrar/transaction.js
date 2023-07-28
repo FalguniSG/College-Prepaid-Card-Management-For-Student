@@ -3,7 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import TransactionHistory from "../../components/TransactionHistoryAdmin";
 import UserCard from "../../components/UserCard";
 
-const Home = () => {
+const TransactionHistoryView = () => {
   return (
     <div className="flex flex-row">
       <div className="w-1/5"> 
@@ -18,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default TransactionHistoryView;

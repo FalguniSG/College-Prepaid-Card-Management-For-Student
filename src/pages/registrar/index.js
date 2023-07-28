@@ -1,5 +1,5 @@
 import SearchUser from "../../components/SearchUser.js";
-import Sidebar from "../../components/Sidebar";
+import Sidebar from "../../components/Sidebar.js";
 import UsersTable from "../../components/UsersTable.js";
 
 

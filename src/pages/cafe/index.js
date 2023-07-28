@@ -3,7 +3,7 @@ import SearchUser from "../../components/SearchUser";
 import SidebarCafe from "../../components/SidebarCafe";
 import UserCard from "../../components/UserCard";
 
-const sell = () => {
+const Sell = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 
@@ -19,5 +19,5 @@ const sell = () => {
     );
   };
   
-  export default sell;
+  export default Sell;
   
