@@ -7,14 +7,11 @@ const CreateAdmin = () => {
           <label className="block text-sm font-medium text-gray-700">User Type</label>
           <select
               name="userType"
-              
-      
               className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
           >
               <option value="regular">Accounts</option>
               <option value="admin">Library</option>
               <option value="manager">Cafeteria</option>
-
           </select>
           </div>
         <div className="mb-4">
