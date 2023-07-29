@@ -18,8 +18,8 @@ const SidebarCafe = () => {
          
         <ul className="space-y-4 p-7">
           <li><Link className="hover:text-gray-300" href="/cafe">Sell</Link></li>
-          <li><Link className="hover:text-gray-300" href="/cafe/additem">Add Item</Link></li>
-          <li><Link className="hover:text-gray-300" href="/cafe/stock">Update Stock</Link></li>
+          <li><Link className="hover:text-gray-300" href="/cafe/additem">Add New Item</Link></li>
+          <li><Link className="hover:text-gray-300" href="/cafe/stock">Products</Link></li>
           <li><Link className="hover:text-gray-300" href="/cafe/profile">My Account</Link></li>
           <li><Link className="hover:text-gray-300" href="/cafe/logout">Logout</Link></li>
         </ul>

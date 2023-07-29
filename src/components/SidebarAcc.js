@@ -1,5 +1,5 @@
 import Link from 'next/link'
-const Sidebar = () => {
+const SidebarAcc = () => {
     return (
       <div className="fixed bg-gray-800 text-white w-1/5 h-full p-6 text-xl">      
         <img 
@@ -17,18 +17,17 @@ const Sidebar = () => {
         </svg> */}
          
         <ul className="space-y-4 p-7">
-          <li><Link className="hover:text-gray-300" href="/register/home">Home</Link></li>
-          <li><Link className="hover:text-gray-300" href="#accounts/home">Make Payment</Link></li>
-          <li><Link className="hover:text-gray-300" href="#profile">Recharge</Link></li>
-          <li><Link className="hover:text-gray-300" href="#">Block/Unblock</Link></li>
-          <li><Link className="hover:text-gray-300" href="#">My Account</Link></li>
-          <li><Link className="hover:text-gray-300" href="#">Logout</Link></li>
-          <li><Link className="hover:text-gray-300" href="#profile">Transaction List</Link></li>
+          <li><Link className="hover:text-gray-300" href="/accounts">Recharge</Link></li>
+          <li><Link className="hover:text-gray-300" href="/accounts/payment">Make Payment</Link></li>
+          <li><Link className="hover:text-gray-300" href="/accounts/action">Action</Link></li>
+          <li><Link className="hover:text-gray-300" href="/accounts/transaction">Transaction List</Link></li>
+          <li><Link className="hover:text-gray-300" href="/accounts/profile">My Account</Link></li>
+          <li><Link className="hover:text-gray-300" href="/">Logout</Link></li>
           
         </ul>
       </div>
     );
   };
   
-  export default Sidebar;
+  export default SidebarAcc;
   

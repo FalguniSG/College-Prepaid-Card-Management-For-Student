@@ -1,14 +1,14 @@
 import AdminProfileView from "../../components/AdminProfileView";
-import SidebarCafe from "../../components/SidebarCafe";
+import SidebarAcc from "../../components/SidebarAcc";
 
 const Profile = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 
-            <SidebarCafe /> 
+           <SidebarAcc />
         </div>
         <div className="w-4/5 p-6">
-           <AdminProfileView />
+            <AdminProfileView />
        
         </div>
       </div>

@@ -1,24 +1,22 @@
-import Cart from "../../components/CafeCart";
+import AccountsPayment from "../../components/AccountsPayment";
 import SearchUser from "../../components/SearchUser";
-import SidebarCafe from "../../components/SidebarCafe";
+import SidebarAcc from "../../components/SidebarAcc";
 import UserCard from "../../components/UserCard";
 
-const Sell = () => {
+const Payment = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 
-            <SidebarCafe /> 
+            <SidebarAcc /> 
         </div>
         <div className="w-4/5 p-6">
-            <SearchUser />
-          
+            <SearchUser />        
             <UserCard />
-            <Cart />
+            <AccountsPayment />
        
         </div>
       </div>
     );
   };
   
-  export default Sell;
-  
+  export default Payment;

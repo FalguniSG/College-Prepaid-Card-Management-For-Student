@@ -1,13 +1,13 @@
 import SearchUser from "../../components/SearchUser";
-import Sidebar from "../../components/Sidebar";
+import SidebarAcc from "../../components/SidebarAcc";
 import TransactionHistory from "../../components/TransactionHistoryAdmin";
 import UserCard from "../../components/UserCard";
 
-const TransactionHistoryView = () => {
+const Transaction = () => {
   return (
     <div className="flex flex-row">
       <div className="w-1/5"> 
-          <Sidebar /> 
+          <SidebarAcc /> 
       </div>
       <div className="w-4/5 p-6">
         <SearchUser />
@@ -18,5 +18,4 @@ const TransactionHistoryView = () => {
   );
 };
 
-export default TransactionHistoryView;
-a
+export default Transaction;

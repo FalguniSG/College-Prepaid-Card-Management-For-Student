@@ -19,7 +19,7 @@ admins - my profile(change own pass),logout
             
     2.accounts
             students list - block/unblock    
-            recharge
+                                                             recharge
             card transactions history
             payment -academic, others
             
