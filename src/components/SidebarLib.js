@@ -20,8 +20,7 @@ const SidebarLib = () => {
           <li><Link className="hover:text-gray-300" href="/library">Issue/Return Book</Link></li>
           <li><Link className="hover:text-gray-300" href="/library/fine">Late Fee</Link></li>
           <li><Link className="hover:text-gray-300" href="/library/additem">Add New Book</Link></li>
-          <li><Link className="hover:text-gray-300" href="/library/update">Stock</Link></li>
-          <li><Link className="hover:text-gray-300" href="/library/transaction">Transaction List</Link></li>
+          <li><Link className="hover:text-gray-300" href="/library/list">Book List</Link></li>
           <li><Link className="hover:text-gray-300" href="/library/profile">My Profile</Link></li>
           <li><Link className="hover:text-gray-300" href="../">Logout</Link></li>
         </ul>

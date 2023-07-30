@@ -1,3 +1,4 @@
+import AddNewBook from "../../components/Library/AddBook";
 import SidebarLib from "../../components/SidebarLib";
 
 const AddBook = () => {
@@ -7,7 +8,7 @@ const AddBook = () => {
           <SidebarLib />
         </div>
         <div className="w-4/5 p-6">
-          
+          <AddNewBook />
        
         </div>
       </div>

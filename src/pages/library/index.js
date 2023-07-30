@@ -1,5 +1,7 @@
 import IssueBook from "../../components/Library/IssueBook";
+import SearchUser from "../../components/SearchUser";
 import SidebarLib from "../../components/SidebarLib";
+import UserCard from "../../components/UserCard";
 
 const Home = () => {
     return (
@@ -8,7 +10,8 @@ const Home = () => {
             <SidebarLib />
         </div>
         <div className="w-4/5 p-6">
-          <IssueBook />
+          <SearchUser />
+          <UserCard />
         </div>
       </div>
     );

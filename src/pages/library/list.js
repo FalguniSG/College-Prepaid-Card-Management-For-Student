@@ -1,18 +1,20 @@
-import Fine from "../../components/Library/Fine";
+import Booklist from "../../components/BookList";
 import SidebarLib from "../../components/SidebarLib";
 
-const SetFine = () => {
+const BookLists = () => {
     return (
       <div className="flex flex-row">
         <div className="w-1/5">
           <SidebarLib />
         </div>
         <div className="w-4/5 p-6">
-          <Fine />
+          
+          <Booklist />
+       
         </div>
       </div>
     );
   };
   
-  export default SetFine;
+  export default BookLists;
   
