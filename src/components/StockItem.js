@@ -3,6 +3,7 @@ import React from 'react';
 const StockUpdate = ({ item, quantity, price, onQuantityChange, onPriceChange }) => {
   return (
     <div className="flex items-center mb-2 bg-gray-300 p-5">
+     
       <div className="flex-1 mr-2">
         <select
           value={item}

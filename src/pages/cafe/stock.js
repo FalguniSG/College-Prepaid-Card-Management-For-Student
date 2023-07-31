@@ -10,7 +10,7 @@ const UpdateStock = () => {
             <SidebarCafe />
         </div>
         <div className="w-4/5 p-6">
-            <StockUpdate />
+            {/* <StockUpdate /> */}
             <CafeStockTable />
         </div>
       </div>
