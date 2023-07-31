@@ -22,7 +22,6 @@ const Sidebar = () => {
           <li><Link className="hover:text-gray-300" href="/registrar/createadmin">Create Supplier </Link></li>
           <li><Link className="hover:text-gray-300" href="/registrar/create">Create Student </Link></li>
           {/* <li><Link className="hover:text-gray-300" href="/registrar/card">Issue Card</Link></li> */}
-          <li><Link className="hover:text-gray-300" href="/registrar/transaction">Transaction List</Link></li>
           <li><Link className="hover:text-gray-300" href="/registrar/profile">My Profile</Link></li>
           <li><Link className="hover:text-gray-300" href="../">Logout</Link></li>
         </ul>

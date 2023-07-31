@@ -18,7 +18,7 @@ const SidebarLib = () => {
          
         <ul className="space-y-4 p-7">
           <li><Link className="hover:text-gray-300" href="/library">Issue/Return Book</Link></li>
-          <li><Link className="hover:text-gray-300" href="/library/fine">Late Fee</Link></li>
+          <li><Link className="hover:text-gray-300" href="/library/fine">Late Fine</Link></li>
           <li><Link className="hover:text-gray-300" href="/library/additem">Add New Book</Link></li>
           <li><Link className="hover:text-gray-300" href="/library/list">Book List</Link></li>
           <li><Link className="hover:text-gray-300" href="/library/profile">My Profile</Link></li>

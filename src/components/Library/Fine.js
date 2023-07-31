@@ -4,8 +4,8 @@ const Fine = () => {
   return (
     <div className="max-w-md mx-auto bg-slate-50 p-6 mt-5 shadow-md rounded-md">
       <div className="flex items-center justify-left">
-        <div className="bg-yellow-500 text-black shadow-md rounded-r-xl pl-12 pr-12 pt-5 pb-5">
-          <h2 className="text-xl font-semibold">Late Fee</h2>
+        <div className="bg-yellow-500 text-black shadow-md rounded-r-full pl-12 pr-12 pt-5 pb-5">
+          <h2 className="text-xl font-semibold">Late Fine</h2>
           <p className="text-xl ">10Tk/day</p>
         </div>
       </div>
