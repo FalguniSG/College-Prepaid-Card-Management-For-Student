@@ -3,10 +3,10 @@ import React, { useState } from "react";
 const Fine = () => {
   return (
     <div className="max-w-md mx-auto bg-slate-50 p-6 mt-5 shadow-md rounded-md">
+      <label className="text-2xl font-bold ">Update Late Fine</label>
       <div className="flex items-center justify-left">
-        <div className="bg-yellow-500 text-black shadow-md rounded-r-full pl-12 pr-12 pt-5 pb-5">
-          <h2 className="text-xl font-semibold">Late Fine</h2>
-          <p className="text-xl ">10Tk/day</p>
+        <div className="bg-yellow-500 text-black shadow-md rounded-r-full pl-8 pr-8 pt-2 pb-2 mt-4">
+          <h2 className="text-xl font-semibold">Late Fine: 10Tk/day</h2>
         </div>
       </div>
       <form className="mt-5 ">
@@ -18,7 +18,7 @@ const Fine = () => {
             type="number"
             id="fine"
             className="w-full px-4 py-2 rounded border"
-            placeholder="Late Fine per day"
+            placeholder="New Late Fine per day"
           />
         </div>
         

@@ -6,7 +6,7 @@ const LibFinePay = () => {
       <form>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">
-            Card Number
+           Payment
           </label>
           <select
               name="userType"
@@ -16,7 +16,14 @@ const LibFinePay = () => {
               <option value="admin">Late Fine</option>
           </select>
         </div>
-        <div className="mb-4">
+       
+          <div className="bg-green-200 text-black shadow-md rounded-lg p-2 m-2">
+              <h2 className="text-xl font-semibold">Lost Fine : 500TK</h2>
+          </div>
+          <div className="bg-green-200 text-black shadow-md rounded-lg p-2 m-2">
+              <h2 className="text-xl font-semibold">Late Fine : 80TK</h2>
+          </div>
+        {/* <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">
             Amount Payable
           </label>
@@ -25,7 +32,7 @@ const LibFinePay = () => {
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             placeholder="Amount"
           />
-        </div>
+        </div> */}
         <div className="max-w-md mx-auto mt-4 flex items-center">
           <p className="text-red-500 text-2xl font-bold bg-red-200 rounded-lg p-2">
             Scan RFID Card

@@ -1,4 +1,5 @@
 import Fine from "../../components/Library/Fine";
+import LostFine from "../../components/Library/LostFIne";
 import SidebarLib from "../../components/SidebarLib";
 
 const SetFine = () => {
@@ -9,6 +10,7 @@ const SetFine = () => {
         </div>
         <div className="w-4/5 p-6">
           <Fine />
+          <LostFine />
         </div>
       </div>
     );
