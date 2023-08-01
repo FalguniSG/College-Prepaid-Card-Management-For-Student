@@ -10,6 +10,18 @@ export const fetcher = async ({ url, params } = {}) => {
     .then(res => res.data)
 }
 
+export const postFetcher = async ({ url, postData } = {}) => {
+  return await axios.post(url, postData, {
+    headers: {
+      "Content-Type": 'application/x-www-form-urlencoded'
+    }
+  })
+    .then(res => res?.data)
+    .catch(error => {
+      throw error
+    })
+}
+
 export const post = async ({ postendpoint, postData, config } = {}) => {
   try {
     // Post data to the API
@@ -49,9 +61,6 @@ export const logout = async (mutate) => {
         }
       }
     }).then(() => {
-      if (window.localStorage.getItem('auth_type')) {
-        window.localStorage.removeItem('auth_type')
-      }
       mutate()
     })
   } catch (error) {

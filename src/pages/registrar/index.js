@@ -13,7 +13,7 @@ const Home = () => {
       <div className="w-4/5 p-6">
         <SearchUser />
         <UsersTable />
-     
+
       </div>
     </div>
   );

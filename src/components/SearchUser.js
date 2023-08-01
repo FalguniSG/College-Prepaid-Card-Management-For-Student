@@ -1,51 +1,61 @@
-import { useState } from 'react';
+import { useGetUsers } from '@/hooks/adminGetUsers';
+import { useEffect, useState } from 'react';
 
 const SearchUser = () => {
-  const [userId, setUserId] = useState('');
-  const [searchResult, setSearchResult] = useState(null);
+  const [searchKey, setSearchKey] = useState("")
+  const [searchTerm, setSearchTerm] = useState(null)
+  const [submit, setSubmit] = useState(false)
 
-  const handleSearch = () => {
-   
-    fetch(`YOUR_API_ENDPOINT/${userId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setSearchResult(data);
-      })
-      .catch((error) => {
-        console.error('Error fetching user data:', error);
-        setSearchResult(null);
-      });
-  };
+  const { data, isLoading, mutate } = useGetUsers(
+    {
+      postData: submit ?
+        {
+          user_type: "student",
+          [searchKey]: searchTerm
+        } : ""
+    }
+  )
 
   return (
     <div className="max-w-md mx-auto bg-white p-6 shadow-md rounded-md">
-      
-      <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700">ID</label>
+
+      <div className=" flex flex-row mb-4">
+        {/* <label className="block text-sm font-medium text-gray-700"></label> */}
+        <select
+          value={searchKey}
+          name='searchTerm'
+          onChange={(e) => {
+            setSearchKey(e.currentTarget.value)
+            setSubmit(false)
+          }}>
+          <option value={""}>select</option>
+          <option value={"id"}>id</option>
+          <option value={"first_name"}>First Name</option>
+          <option value={"last_name"}>Last Name</option>
+          <option value={"email"}>Email</option>
+          <option value={"phone"}>Phone</option>
+        </select>
         <input
           type="text"
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
+          onChange={(e) => {
+            setSearchTerm(e.currentTarget.value)
+            setSubmit(false)
+          }}
+          value={[searchKey].searchTerm}
           className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
           placeholder="Enter ID/RFID card number"
         />
+
       </div>
       <button
         type="button"
-        onClick={handleSearch}
+        onClick={() => {
+          setSubmit(true)
+        }}
         className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
       >
         Search
       </button>
-
-      {searchResult && (
-        <div className="mt-4">
-          <h3 className="text-lg font-semibold mb-2">Search Result:</h3>
-          <p>User ID: {searchResult.id}</p>
-          <p>Name: {searchResult.name}</p>
-          {/* Display other user information as needed */}
-        </div>
-      )}
     </div>
   );
 };

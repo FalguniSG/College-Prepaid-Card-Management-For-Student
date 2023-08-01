@@ -12,13 +12,19 @@ export const useUser = ({ middleware, redirectIfAuthenticated, options } = {}) =
     dedupingInterval: 5000
   })
 
+
   useEffect(() => {
+
     if (middleware === 'guest' && redirectIfAuthenticated && data) {
       router.push("/" + data?.data?.type)
     }
 
     if (middleware === 'auth' && error) {
       logout(mutate)
+    }
+
+    if (middleware === "auth" && data && !router.asPath.includes(data?.data?.type)) {
+      router.push("/" + data?.data?.type)
     }
 
   }, [middleware, redirectIfAuthenticated, data, error, router, mutate])
