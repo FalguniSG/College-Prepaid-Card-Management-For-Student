@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 const AccountsPayment = () => {
     
   
@@ -46,9 +48,9 @@ const AccountsPayment = () => {
             />
           </div>
           <div className="max-w-md mx-auto mt-4 flex items-center">
-            <button className="text-white text-2xl font-bold bg-red-400 rounded-lg p-2 hover:text-red-950 hover:bg-red-500">
+            <Button className="">
               Scan RFID Card
-            </button>
+            </Button>
             <button
               type="button"
               className="w-[40%] bg-blue-500 text-white ml-8 py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
