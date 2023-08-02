@@ -4,7 +4,6 @@ const axios = Axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
   withCredentials: true
 })
-
 export const fetcher = async ({ url, params } = {}) => {
   return await axios.get(url, params ? { params: params } : "")
     .then(res => res.data)
@@ -31,7 +30,6 @@ export const post = async ({ postendpoint, postData, config } = {}) => {
     throw error // Rethrow the error
   }
 }
-
 export const put = async ({ putendpoint, updatedData, config } = {}) => {
   try {
     // Update data in the API
@@ -41,7 +39,6 @@ export const put = async ({ putendpoint, updatedData, config } = {}) => {
     throw error // Rethrow the error
   }
 }
-
 export const del = async ({ delendpoint, config } = {}) => {
   try {
     // Delete data from the API
@@ -51,7 +48,6 @@ export const del = async ({ delendpoint, config } = {}) => {
     throw error // Rethrow the error
   }
 }
-
 export const logout = async (mutate) => {
   try {
     return await post({
@@ -70,5 +66,4 @@ export const logout = async (mutate) => {
 
   window.location.pathname = '/'
 }
-
 export default axios
