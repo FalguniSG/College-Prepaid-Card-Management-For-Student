@@ -2,6 +2,7 @@ import { useAuthContext } from "@/contexts/authContext";
 import { useUserSearchContext } from "@/contexts/usersSearchContext";
 import { useAdminTransactions } from "@/hooks/admin_transactions";
 import { useTransactionTypes } from "@/hooks/payment_types";
+import { useUserTransaction } from "@/hooks/user_transactions";
 import { useEffect, useState } from "react";
 
 const TransactionHistory = () => {
@@ -18,7 +19,12 @@ const TransactionHistory = () => {
   })
 
   const { data: transaction_types, isLoading: transactionTypesLoading } = useTransactionTypes({ params: { admin_type_id: queryParams?.admin_type_id } })
-  const { data: transaction_data, isLoading: transactionLoading, mutate: mutateTransaction } = useAdminTransactions({ queryParams: queryParams })
+
+  const { data: admin_transactions, isLoading: transactionLoading, mutate: mutateTransaction } = useAdminTransactions({ queryParams: queryParams })
+
+  const { data: user_transactions, isLoading } = useUserTransaction({ postData: queryParams })
+
+  const transaction_data = user_transactions || admin_transactions
 
   const handleInputChange = e => {
     setQueryParams({
@@ -45,7 +51,7 @@ const TransactionHistory = () => {
 
     <div className="rounded-sm border border-stroke bg-white m-4 px-5 pt-6 pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <div className="flex flex-row w-full ml-40">
-        <select
+        {!user_transactions && <select
           name="transaction_desc_id"
           value={queryParams?.transaction_desc_id}
           className="mt-1 p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300 w-[30%]"
@@ -59,11 +65,11 @@ const TransactionHistory = () => {
           {transaction_types?.data?.map((trans_d, ind) => (
             <option key={"td_" + ind} value={trans_d?.id}>{trans_d?.transaction_description}</option>
           ))}
-        </select>
+        </select>}
 
         <div className="flex flex-row w-[40%]">
-          <label className="mx-5 p-1"> From <input type="date" className="border" /></label>
-          <label className="mx-5 p-1">To <input type="date" className="border" /></label>
+          <label className="mx-5 p-1"> From <input onChange={handleInputChange} type="date" name="from_date" value={queryParams?.from_date} className="border" /></label>
+          <label className="mx-5 p-1">To <input name="to_date" onChange={handleInputChange} value={queryParams?.to_date} type="date" className="border" /></label>
         </div>
       </div>
       <div className="max-w-full overflow-x-auto">

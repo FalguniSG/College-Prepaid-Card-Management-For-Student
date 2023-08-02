@@ -2,10 +2,10 @@ import { useAuthContext } from "@/contexts/authContext";
 import { useUserSearchContext } from "@/contexts/usersSearchContext";
 
 const UserCard = () => {
-  const { userSearchData } = useUserSearchContext()
+  const { userSearchData, setUserSearchData } = useUserSearchContext()
   const { authData } = useAuthContext()
 
-  console.log(userSearchData?.data);
+
 
   return (
     userSearchData &&
@@ -18,7 +18,7 @@ const UserCard = () => {
             <h2 className="text-xl font-semibold">Name: {userSearchData?.data?.first_name + " " + userSearchData?.data?.last_name}</h2>
             <p className="text-xl text-gray-600">ID: {userSearchData?.data?.student_id}</p>
             {
-              authData?.data?.type == "accounts" && <p className="text-xl text-gray-600">Tk.{userSearchData?.data?.balance}/-</p>
+              (authData?.data?.type == "accounts" || authData?.data?.type == "student")  && <p className="text-xl text-gray-600">Tk.{userSearchData?.data?.balance}/-</p>
             }
           </div>
         }
