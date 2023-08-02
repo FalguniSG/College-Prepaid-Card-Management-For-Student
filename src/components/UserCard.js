@@ -18,7 +18,7 @@ const UserCard = () => {
             <h2 className="text-xl font-semibold">Name: {userSearchData?.data?.first_name + " " + userSearchData?.data?.last_name}</h2>
             <p className="text-xl text-gray-600">ID: {userSearchData?.data?.student_id}</p>
             {
-              authData?.data?.type == "accounts" && <p className="text-xl text-gray-600">Balance: 1550TK</p>
+              authData?.data?.type == "accounts" && <p className="text-xl text-gray-600">Tk.{userSearchData?.data?.balance}/-</p>
             }
 
 
