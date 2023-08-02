@@ -40,7 +40,7 @@ const RFIDCardRechargeForm = () => {
           }
         }
       }).then((res) => {
-        alert(res?.data?.data)
+        alert(res?.data?.message)
       }).catch((error) => {
         alert(error?.response?.data?.message)
       })
