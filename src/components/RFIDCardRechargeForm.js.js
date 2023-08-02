@@ -2,11 +2,10 @@ import { useUserSearchContext } from "@/contexts/usersSearchContext";
 import { useReadRfid } from "@/hooks/read_rfid";
 import { post } from "@/lib/axios";
 import { useState } from "react";
-import { useEffect, useRef } from "react";
-import Button from "./Button";
+import { useEffect } from "react";
+
 
 const RFIDCardRechargeForm = () => {
-  const rfidLabel = useRef()
   const { rfidData, isScanning, scanRfid } = useReadRfid()
   const { userSearchData } = useUserSearchContext()
 
@@ -74,6 +73,7 @@ const RFIDCardRechargeForm = () => {
             }}
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             placeholder="Enter Amount to Recharge"
+            required
           />
         </div>
         <div className="max-w-md mx-auto mt-4 flex items-center">

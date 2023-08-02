@@ -54,6 +54,7 @@ const SearchUser = () => {
         type="button"
         onClick={() => {
           setSubmit(true)
+          mutate()
         }}
         className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
       >
