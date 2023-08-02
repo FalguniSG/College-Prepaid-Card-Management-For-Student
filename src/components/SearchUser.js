@@ -25,8 +25,8 @@ const SearchUser = () => {
           value={searchKey}
           name='searchTerm'
           onChange={(e) => {
-            setSearchKey(e.currentTarget.value)
             setSubmit(false)
+            setSearchKey(e.currentTarget.value)
           }}>
           <option value={""}>select</option>
           <option value={"id"}>id</option>
