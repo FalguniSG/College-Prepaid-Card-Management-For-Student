@@ -10,10 +10,10 @@ const UsersTable = () => {
 
 
   useEffect(() => {
-    if (Array.isArray(userData?.data)) {
-      setUserSearchStateData(userData?.data)
-    } else if (userData != undefined) {
-      setUserSearchStateData([userData?.data])
+    if (Array.isArray(userSearchData?.data)) {
+      setUserSearchStateData(userSearchData?.data)
+    } else if (userSearchData != undefined) {
+      setUserSearchStateData([userSearchData?.data])
     } else {
       setUserSearchStateData([])
     }
