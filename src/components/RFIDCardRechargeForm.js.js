@@ -76,7 +76,7 @@ const RFIDCardRechargeForm = () => {
           />
         </div>
         <div className="max-w-md mx-auto mt-4 flex items-center">
-          {isScanning ? "Scan Card" : <Button className=""
+          {isScanning ? "Scan Card" : <button className="text-white transition-colors duration-200 transform bg-gradient-to-b from-sky-800 to-emerald-900 rounded-md ml-5 px-5 py-2 text-xl hover:text-blue-300 focus:outline-none"
             onClick={(e) => {
               e.stopPropagation()
               setFormData({ ...formData, submit: false })
@@ -84,7 +84,7 @@ const RFIDCardRechargeForm = () => {
             }
             }>
             Scan RFID Card
-          </Button>}
+          </button>}
           {
             rfidData &&
             <button
