@@ -1,10 +1,9 @@
-import { useUser } from "@/hooks/user";
 import { post } from "@/lib/axios";
-import { useState } from "react";
-import Button from "./Button";
+import { useEffect, useState } from "react";
+import { useReadRfid } from "@/hooks/read_rfid";
 
 const CreateStudent = () => {
-  const { data: user, isLoading: userLoading } = useUser({ middleware: "auth" })
+  const { rfidData, scanRfid, isScanning } = useReadRfid()
   const [formData, setFormData] = useState({
     student_id: "",
     first_name: "",
@@ -14,7 +13,7 @@ const CreateStudent = () => {
     fathers_name: "",
     mothers_name: "",
     guardian_phone: "",
-    rfid: 1565565225655,
+    rfid: rfidData,
     submit: false
   })
 
@@ -37,13 +36,19 @@ const CreateStudent = () => {
       fathers_name: "",
       mothers_name: "",
       guardian_phone: "",
-      rfid: 1565565225655,
+      rfid: "",
       submit: false
     })
   }
 
+  useEffect(() => {
+    if (rfidData) {
+      setFormData({ ...formData, rfid: rfidData })
+    }
+  }, [rfidData])
+
   const createUser = async (e) => {
-    
+
     if (formData?.submit) {
       await post({
         postendpoint: "/admin/create_student", postData: formData, config: {
@@ -161,7 +166,19 @@ const CreateStudent = () => {
             placeholder="Enter number"
           />
         </div>
-        <Button className="w-[70%] mb-4 ml-10">Scan a Card</Button>
+
+        <div>
+          {isScanning ? "Scan Card" :
+            <button type="button" className="w-[70%] mb-4 text-white transition-colors duration-200 transform bg-gradient-to-b from-sky-800 to-emerald-900 rounded-md ml-10 px-5 py-2 text-xl hover:text-blue-300 focus:outline-none"
+              onClick={(e) => {
+                setFormData({ ...formData, submit: false })
+                scanRfid()
+              }}>Issue RFID Card</button>
+
+          }
+          <span className="ml-5">{rfidData}</span>
+        </div>
+
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
@@ -174,7 +191,7 @@ const CreateStudent = () => {
         >
           Create User
         </button>
-        
+
 
         {/* <button
           type="submit"
