@@ -1,6 +1,7 @@
 import { useUser } from "@/hooks/user";
 import { post } from "@/lib/axios";
 import { useState } from "react";
+import Button from "./Button";
 
 const CreateStudent = () => {
   const { data: user, isLoading: userLoading } = useUser({ middleware: "auth" })
@@ -160,7 +161,7 @@ const CreateStudent = () => {
             placeholder="Enter number"
           />
         </div>
-
+        <Button className="w-[70%] mb-4 ml-10">Scan a Card</Button>
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
@@ -173,7 +174,7 @@ const CreateStudent = () => {
         >
           Create User
         </button>
-        <p className="text-red-600 m-12 ml-[35%] text-xl font-bold ">Scan a Card</p>
+        
 
         {/* <button
           type="submit"
