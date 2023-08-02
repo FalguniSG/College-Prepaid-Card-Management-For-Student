@@ -5,10 +5,10 @@ const UserSearchContext = createContext();
 
 // Create the context provider
 export function UserProvider({ children }) {
-  const [userData, setUserData] = useState(null);
+  const [userSearchData, setUserSearchData] = useState(null);
 
   return (
-    <UserSearchContext.Provider value={{ userData, setUserData }}>
+    <UserSearchContext.Provider value={{ userSearchData, setUserSearchData }}>
       {children}
     </UserSearchContext.Provider>
   );

@@ -3,7 +3,7 @@ import { postFetcher } from "@/lib/axios"
 import { useEffect, useState } from "react";
 import useSWR from 'swr'
 export const useGetUsers = ({ postData } = {}) => {
-  const { setUserData } = useUserSearchContext();
+  const { setUserSearchData } = useUserSearchContext();
   const { data, isLoading, error, mutate } = useSWR(postData ? { url: "/admin/get_users", postData: postData } : "",
     postFetcher, {
     revalidateOnFocus: false,
@@ -12,10 +12,12 @@ export const useGetUsers = ({ postData } = {}) => {
 
 
   useEffect(() => {
-    if (data) {
-      setUserData(data);
+    if (error) {
+      setUserSearchData(error?.respose?.data?.message)
+    } else if (data) {
+      setUserSearchData(data);
     }
-  }, [data, setUserData]);
+  }, [data, error, setUserSearchData]);
 
   return {
     data,

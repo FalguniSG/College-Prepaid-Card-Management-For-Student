@@ -5,19 +5,19 @@ import { useUser } from "@/hooks/user";
 
 
 const UsersTable = () => {
-  const { userData } = useUserSearchContext();
-  const [userSearchData, setUserSearchData] = useState([])
+  const { userSearchData } = useUserSearchContext();
+  const [userSearchStateData, setUserSearchStateData] = useState([])
 
 
   useEffect(() => {
     if (Array.isArray(userData?.data)) {
-      setUserSearchData(userData?.data)
+      setUserSearchStateData(userData?.data)
     } else if (userData != undefined) {
-      setUserSearchData([userData?.data])
+      setUserSearchStateData([userData?.data])
     } else {
-      setUserSearchData([])
+      setUserSearchStateData([])
     }
-  }, [userData])
+  }, [userSearchData])
 
 
   return (
@@ -53,7 +53,7 @@ const UsersTable = () => {
 
           <tbody>
             {
-              userSearchData?.map((data, ind) => (
+              userSearchStateData?.map((data, ind) => (
                 <tr key={"search_result" + ind}>
                   <td className="border-b border-[#eee] py-5 px-4 pl-9  xl:pl-11">
                     <h5 className="font-medium text-black dark:text-gray">
