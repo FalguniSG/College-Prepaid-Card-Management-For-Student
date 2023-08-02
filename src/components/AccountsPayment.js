@@ -46,7 +46,7 @@ const AccountsPayment = () => {
             />
           </div>
           <div className="max-w-md mx-auto mt-4 flex items-center">
-            <p className="text-red-500 text-2xl font-bold bg-red-200 rounded-lg p-2">
+            <p className="text-red-800 text-2xl font-bold bg-red-400 rounded-lg p-2 hover:text-red-950 hover:bg-red-500">
               Scan RFID Card
             </p>
             <button
