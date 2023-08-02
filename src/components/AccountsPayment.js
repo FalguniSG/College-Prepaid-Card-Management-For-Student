@@ -74,7 +74,7 @@ const AccountsPayment = () => {
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             required
           >
-            <option value="">Select</option>
+            <option value="" disabled>Select</option>
             {transaction_types?.data?.map((trans_d, ind) => (
               <option key={"td_" + ind} value={trans_d?.id}>{trans_d?.transaction_description}</option>
             ))}
