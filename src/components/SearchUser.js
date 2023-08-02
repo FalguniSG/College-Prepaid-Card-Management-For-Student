@@ -24,7 +24,7 @@ const SearchUser = () => {
       <div className=" flex flex-row mb-4">
         {/* <label className="block text-sm font-medium text-gray-700"></label> */}
         <select
-          value={searchKey}
+          value={searchKey ?? ""}
           className="mt-1 p-2x text-gray-500 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
           name='searchTerm'
           onChange={(e) => {

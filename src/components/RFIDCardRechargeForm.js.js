@@ -19,9 +19,15 @@ const RFIDCardRechargeForm = () => {
 
   useEffect(() => {
     if (rfidData) {
-      rfidLabel.current.value = rfidData
+      setFormData({ ...formData, rfid: rfidData })
     }
   }, [rfidData])
+
+  useEffect(() => {
+    if (userSearchData?.data?.student_id) {
+      setFormData({ ...formData, student_id: userSearchData?.data?.student_id })
+    }
+  }, [userSearchData])
 
   const handleRecharge = (e) => {
     e.preventDefault()
@@ -44,19 +50,14 @@ const RFIDCardRechargeForm = () => {
   return (
     <div className="max-w-md mx-auto bg-blue-100 p-6 mt-5 shadow-md rounded-md">
       <h2 className="text-xl font-semibold mb-4">RFID Card Recharge</h2>
-      <form onSubmit={handleRecharge}>
+      <form onSubmit={(e) => { handleRecharge(e) }}>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">
             Card Number
           </label>
-          <input
-            ref={rfidLabel}
-            type="text"
-            className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-            placeholder="Enter RFID Card Number"
-            defaultValue={rfidData}
-            disabled
-          />
+          <div className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300">
+            {rfidData ?? "XXXXXXXXXXXXX"}
+          </div>
         </div>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700">
@@ -73,7 +74,7 @@ const RFIDCardRechargeForm = () => {
             }}
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             placeholder="Enter Amount to Recharge"
-          />  
+          />
         </div>
         <div className="max-w-md mx-auto mt-4 flex items-center">
           {isScanning ? "Scan Card" : <button className="text-white transition-colors duration-200 transform bg-gradient-to-b from-sky-800 to-emerald-900 rounded-md ml-5 px-5 py-2 text-xl hover:text-blue-300 focus:outline-none"
@@ -88,8 +89,12 @@ const RFIDCardRechargeForm = () => {
           {
             rfidData &&
             <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setFormData({ ...formData, submit: true })
 
-              type="button"
+              }}
+              type="submit"
               className="w-[40%] bg-blue-500 text-white ml-8 py-2 px-4 rounded-md"
             >
               Recharge
