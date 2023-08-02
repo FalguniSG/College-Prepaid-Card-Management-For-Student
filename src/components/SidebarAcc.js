@@ -22,7 +22,7 @@ const SidebarAcc = () => {
           {/* <li><Link className="hover:text-gray-300" href="/accounts/action">Action</Link></li> */}
           <li><Link className="hover:text-gray-300" href="/accounts/transaction">Transaction List</Link></li>
           <li><Link className="hover:text-gray-300" href="/accounts/profile">My Account</Link></li>
-          <li><Link className="hover:text-gray-300" href="/">Logout</Link></li>
+          <li><Link className="hover:text-gray-300" href="/logout">Logout</Link></li>
           
         </ul>
       </div>

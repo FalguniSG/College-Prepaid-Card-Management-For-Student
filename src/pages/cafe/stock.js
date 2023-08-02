@@ -1,9 +1,12 @@
 
+import { useUser } from "@/hooks/user";
 import CafeStockTable from "../../components/CafeStockTable";
 import SidebarCafe from "../../components/SidebarCafe";
 import StockUpdate from "../../components/StockItem";
 
 const UpdateStock = () => {
+  const {data} = useUser({middleware: "auth"})
+
     return (
       <div className="flex flex-row">
         <div className="w-1/5"> 

@@ -1,4 +1,6 @@
 
+import { AuthProvider } from "@/contexts/authContext";
+import { UserProvider } from "@/contexts/usersSearchContext";
 import Head from "next/head";
 import "tailwindcss/tailwind.css";
 function MyApp({ Component, pageProps }) {
@@ -9,9 +11,12 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      
-        <Component {...pageProps} />
-      
+      <AuthProvider>
+        <UserProvider>
+          <Component {...pageProps} />
+        </UserProvider>
+      </AuthProvider>
+
     </>
   )
 }

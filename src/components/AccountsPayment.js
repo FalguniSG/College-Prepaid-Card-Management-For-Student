@@ -1,5 +1,7 @@
 const AccountsPayment = () => {
-    const handleScanButtonClick = () => {
+    
+  
+  const handleScanButtonClick = () => {
       // Implement the RFID card scanning functionality here
       // This function should interact with your RFID scanning device/software
     };

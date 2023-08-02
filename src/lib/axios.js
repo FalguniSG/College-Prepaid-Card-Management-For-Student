@@ -4,10 +4,30 @@ const axios = Axios.create({
   baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
   withCredentials: true
 })
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa4768976e2512392f304d70a9c04417d591a70b
 export const fetcher = async ({ url, params } = {}) => {
   return await axios.get(url, params ? { params: params } : "")
     .then(res => res.data)
 }
+<<<<<<< HEAD
+=======
+
+export const postFetcher = async ({ url, postData } = {}) => {
+  return await axios.post(url, postData, {
+    headers: {
+      "Content-Type": 'application/x-www-form-urlencoded'
+    }
+  })
+    .then(res => res?.data)
+    .catch(error => {
+      throw error
+    })
+}
+
+>>>>>>> aa4768976e2512392f304d70a9c04417d591a70b
 export const post = async ({ postendpoint, postData, config } = {}) => {
   try {
     // Post data to the API
@@ -17,6 +37,10 @@ export const post = async ({ postendpoint, postData, config } = {}) => {
     throw error // Rethrow the error
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa4768976e2512392f304d70a9c04417d591a70b
 export const put = async ({ putendpoint, updatedData, config } = {}) => {
   try {
     // Update data in the API
@@ -26,6 +50,10 @@ export const put = async ({ putendpoint, updatedData, config } = {}) => {
     throw error // Rethrow the error
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa4768976e2512392f304d70a9c04417d591a70b
 export const del = async ({ delendpoint, config } = {}) => {
   try {
     // Delete data from the API
@@ -35,6 +63,10 @@ export const del = async ({ delendpoint, config } = {}) => {
     throw error // Rethrow the error
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa4768976e2512392f304d70a9c04417d591a70b
 export const logout = async (mutate) => {
   try {
     return await post({
@@ -44,9 +76,12 @@ export const logout = async (mutate) => {
         }
       }
     }).then(() => {
+<<<<<<< HEAD
       if (window.localStorage.getItem('auth_type')) {
         window.localStorage.removeItem('auth_type')
       }
+=======
+>>>>>>> aa4768976e2512392f304d70a9c04417d591a70b
       mutate()
     })
   } catch (error) {
@@ -56,4 +91,8 @@ export const logout = async (mutate) => {
 
   window.location.pathname = '/'
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa4768976e2512392f304d70a9c04417d591a70b
 export default axios
