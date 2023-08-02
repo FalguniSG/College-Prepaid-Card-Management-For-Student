@@ -1,30 +1,50 @@
+import { post } from '@/lib/axios';
 import React, { useState } from 'react';
 
 const AddItem = ({ onAddItem }) => {
-  const [itemName, setItemName] = useState('');
-  const [itemPrice, setItemPrice] = useState('');
-  const [itemQuantity, setItemQuantity] = useState('');
-  const [itemExpire, setItemExpire] = useState('');
+  const [items, setItems] = useState({
+    name: "",
+    price: "",
+    quantity: "",
+    submit: false
+  });
 
-  const handleSubmit = (e) => {
+  const handleInputChange = (e) => {
+    setItems({
+      ...items,
+      submit: false,
+      [e.currentTarget.name]: e.currentTarget.value
+    })
+  }
+
+
+  const clearForm = () => {
+    setItems({
+      name: "",
+      price: "",
+      quantity: "",
+      submit: false,
+    })
+  }
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Create a new item object with the input data
-    const newItem = {
-      name: itemName,
-      price: itemPrice,
-      quantity: itemQuantity,
-      expire: itemExpire,
-    };
-
-    // Pass the new item to the parent component (e.g., CafeMenu) through the onAddItem callback
-    onAddItem(newItem);
-
-    // Reset the input fields after adding the item
-    setItemName('');
-    setItemPrice('');
-    setItemQuantity('');
-    setItemExpire('');
+    await post({
+      postendpoint: "canteen/add_item", postData: items, config: {
+        headers: {
+          "Content-Type": 'application/x-www-form-urlencoded'
+        }
+      }
+    })
+      .then(res => {
+        alert(res?.data?.message);
+        clearForm()
+      })
+      .catch((err) => {
+        alert(err?.response?.data?.message)
+      })
   };
 
   return (
@@ -35,8 +55,9 @@ const AddItem = ({ onAddItem }) => {
           <label className="block text-sm font-medium text-gray-700">Item Name</label>
           <input
             type="text"
-            value={itemName}
-            onChange={(e) => setItemName(e.target.value)}
+            name='name'
+            value={items?.name}
+            onChange={handleInputChange}
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             placeholder="Enter item name"
             required
@@ -46,8 +67,9 @@ const AddItem = ({ onAddItem }) => {
           <label className="block text-sm font-medium text-gray-700">Price</label>
           <input
             type="number"
-            value={itemPrice}
-            onChange={(e) => setItemPrice(e.target.value)}
+            name='price'
+            value={items?.price}
+            onChange={handleInputChange}
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             placeholder="Enter item price"
             required
@@ -57,17 +79,22 @@ const AddItem = ({ onAddItem }) => {
           <label className="block text-sm font-medium text-gray-700">Quantity</label>
           <input
             type="number"
-            value={itemQuantity}
-            onChange={(e) => setItemQuantity(e.target.value)}
+            name='quantity'
+            value={items?.quantity}
+            onChange={handleInputChange}
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             placeholder="Enter item quantity"
             required
           />
         </div>
-     
+
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+          onClick={(e) => {
+            e.stopPropagation()
+            setItems({ ...items, submit: true })
+          }}
         >
           Add Item
         </button>
