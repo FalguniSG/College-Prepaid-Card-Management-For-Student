@@ -1,3 +1,5 @@
+import Button from "../Button";
+
 const LibFinePay = () => {
 
   return (
@@ -34,9 +36,9 @@ const LibFinePay = () => {
           />
         </div> */}
         <div className="max-w-md mx-auto mt-4 flex items-center">
-          <p className="text-red-500 text-2xl font-bold bg-red-200 rounded-lg p-2">
+          <Button className="">
             Scan RFID Card
-          </p>
+          </Button>
           <button
             type="button"
             className="w-[40%] bg-blue-500 text-white ml-8 py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"

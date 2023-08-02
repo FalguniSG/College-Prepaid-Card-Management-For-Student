@@ -3,6 +3,7 @@ import { useReadRfid } from "@/hooks/read_rfid";
 import { post } from "@/lib/axios";
 import { useState } from "react";
 import { useEffect, useRef } from "react";
+import Button from "./Button";
 
 const RFIDCardRechargeForm = () => {
   const rfidLabel = useRef()
@@ -75,7 +76,7 @@ const RFIDCardRechargeForm = () => {
           />
         </div>
         <div className="max-w-md mx-auto mt-4 flex items-center">
-          {isScanning ? "Scan Card" : <button className="text-black-500 text-2xl font-bold bg-red-200 rounded-lg p-2"
+          {isScanning ? "Scan Card" : <Button className=""
             onClick={(e) => {
               e.stopPropagation()
               setFormData({ ...formData, submit: false })
@@ -83,7 +84,7 @@ const RFIDCardRechargeForm = () => {
             }
             }>
             Scan RFID Card
-          </button>}
+          </Button>}
           {
             rfidData &&
             <button

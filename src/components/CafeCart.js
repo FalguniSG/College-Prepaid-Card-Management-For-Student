@@ -1,5 +1,6 @@
 import React from 'react';
 import CartTable from './CartTable';
+import Button from './Button';
 
 const Cart = ({ item, quantity, price, onQuantityChange, onPriceChange }) => {
   return (
@@ -40,7 +41,7 @@ const Cart = ({ item, quantity, price, onQuantityChange, onPriceChange }) => {
     <CartTable />
 
     <div className='max-w-md mx-auto mt-4 flex items-center'>
-    <p className='text-red-500 text-2xl font-bold bg-red-200 rounded-lg p-2'>Scan RFID Card</p>
+    <Button className=''>Scan RFID Card</Button>
     <button
         type="button"
         className="w-[40%] bg-blue-500 text-white ml-8 py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"

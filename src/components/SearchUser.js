@@ -25,13 +25,14 @@ const SearchUser = () => {
         {/* <label className="block text-sm font-medium text-gray-700"></label> */}
         <select
           value={searchKey}
+          className="mt-1 p-2x text-gray-500 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
           name='searchTerm'
           onChange={(e) => {
             setSubmit(false)
             setSearchKey(e.currentTarget.value)
           }}>
-          <option value={""}>select</option>
-          <option value={"id"}>id</option>
+          <option value={""}>Select</option>
+          <option value={"id"}>Id</option>
           <option value={"first_name"}>First Name</option>
           <option value={"last_name"}>Last Name</option>
           <option value={"email"}>Email</option>
@@ -45,7 +46,7 @@ const SearchUser = () => {
           }}
           value={[searchKey].searchTerm}
           className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-          placeholder="Enter ID/RFID card number"
+          placeholder="Search..."
         />
 
       </div>
