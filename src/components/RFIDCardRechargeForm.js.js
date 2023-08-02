@@ -32,6 +32,10 @@ const RFIDCardRechargeForm = () => {
             "Content-Type": 'application/x-www-form-urlencoded'
           }
         }
+      }).then((res) => {
+        alert(res?.data?.data)
+      }).catch((error) => {
+        alert(error?.response?.data?.message)
       })
     }
   }

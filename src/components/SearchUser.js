@@ -1,9 +1,11 @@
+import { useUserSearchContext } from '@/contexts/usersSearchContext';
 import { useGetUsers } from '@/hooks/adminGetUsers';
 import { useEffect, useState } from 'react';
 
 const SearchUser = () => {
-  const [searchKey, setSearchKey] = useState("")
-  const [searchTerm, setSearchTerm] = useState(null)
+  const { userSearchData } = useUserSearchContext()
+  const [searchKey, setSearchKey] = useState(userSearchData?.data ? "id" : null)
+  const [searchTerm, setSearchTerm] = useState(userSearchData?.data?.id)
   const [submit, setSubmit] = useState(false)
 
   const { data, isLoading, mutate } = useGetUsers(
