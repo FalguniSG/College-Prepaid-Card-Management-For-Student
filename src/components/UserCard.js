@@ -20,13 +20,9 @@ const UserCard = () => {
             {
               authData?.data?.type == "accounts" && <p className="text-xl text-gray-600">Tk.{userSearchData?.data?.balance}/-</p>
             }
-
-
           </div>
         }
-
       </div>
-
     </div>
   )
 }
