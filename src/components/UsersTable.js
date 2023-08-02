@@ -1,11 +1,11 @@
-import { useUserContext } from "@/contexts/usersSearchContext";
+import { useUserSearchContext } from "@/contexts/usersSearchContext";
 import SwitcherThree from "./SwitcherThree";
 import { useEffect, useState } from "react";
+import { useUser } from "@/hooks/user";
 
 
 const UsersTable = () => {
-
-  const { userData } = useUserContext();
+  const { userData } = useUserSearchContext();
   const [userSearchData, setUserSearchData] = useState([])
 
 

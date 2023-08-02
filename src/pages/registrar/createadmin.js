@@ -1,7 +1,10 @@
+import { useUser } from "@/hooks/user";
 import CreateAdmin from "../../components/CreateAdmin";
 import Sidebar from "../../components/Sidebar";
 
 const CreateSupplierAcc = () => {
+  const { data } = useUser({ middleware: "auth" })
+
   return (
     <div className="flex flex-row">
       <div className="w-1/5">

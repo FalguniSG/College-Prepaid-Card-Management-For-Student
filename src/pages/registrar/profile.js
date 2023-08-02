@@ -1,7 +1,10 @@
+import { useUser } from "@/hooks/user";
 import ViewAdmin from "../../components/AdminProfileView";
 import Sidebar from "../../components/Sidebar";
 
 const Profile = () => {
+  const {data} = useUser({middleware: "auth"})
+
   return (
     <div className="flex flex-row">
       <div className="w-1/5">

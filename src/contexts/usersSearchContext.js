@@ -1,20 +1,20 @@
 import React, { createContext, useContext, useState } from 'react';
 
 // Create the context
-const UserContext = createContext();
+const UserSearchContext = createContext();
 
 // Create the context provider
 export function UserProvider({ children }) {
   const [userData, setUserData] = useState(null);
 
   return (
-    <UserContext.Provider value={{ userData, setUserData }}>
+    <UserSearchContext.Provider value={{ userData, setUserData }}>
       {children}
-    </UserContext.Provider>
+    </UserSearchContext.Provider>
   );
 }
 
 // Custom hook to consume the context
-export function useUserContext() {
-  return useContext(UserContext);
+export function useUserSearchContext() {
+  return useContext(UserSearchContext);
 }

@@ -1,9 +1,9 @@
-import { useUserContext } from "@/contexts/usersSearchContext";
+import { useUserSearchContext } from "@/contexts/usersSearchContext";
 import { postFetcher } from "@/lib/axios"
 import { useEffect, useState } from "react";
 import useSWR from 'swr'
 export const useGetUsers = ({ postData } = {}) => {
-  const { setUserData } = useUserContext();
+  const { setUserData } = useUserSearchContext();
   const { data, isLoading, error, mutate } = useSWR(postData ? { url: "/admin/get_users", postData: postData } : "",
     postFetcher, {
     revalidateOnFocus: false,
