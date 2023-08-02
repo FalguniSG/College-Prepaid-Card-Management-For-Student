@@ -2,11 +2,9 @@ import { useTransactionTypes } from "@/hooks/payment_types";
 import { useAuthContext } from "@/contexts/authContext";
 import { useState } from "react";
 import { useUserSearchContext } from "@/contexts/usersSearchContext";
-import { useRef } from "react";
 import { useReadRfid } from "@/hooks/read_rfid";
 import { post } from "@/lib/axios";
 import { useEffect } from "react";
-import { useGetUsers } from "@/hooks/adminGetUsers";
 
 const AccountsPayment = () => {
   const { rfidData, isScanning, scanRfid } = useReadRfid()
