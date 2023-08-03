@@ -22,6 +22,7 @@ const SearchUser = () => {
     <div className="max-w-md mx-auto bg-white p-6 shadow-md rounded-md">
 
       <div className=" flex flex-row mb-4">
+
         {/* <label className="block text-sm font-medium text-gray-700"></label> */}
         <select
           value={searchKey ?? ""}
@@ -31,7 +32,7 @@ const SearchUser = () => {
             setSubmit(false)
             setSearchKey(e.currentTarget.value)
           }}>
-          <option value={""}>Select</option>
+          <option value={""} disabled>Select</option>
           <option value={"id"}>Id</option>
           <option value={"first_name"}>First Name</option>
           <option value={"last_name"}>Last Name</option>
@@ -60,6 +61,7 @@ const SearchUser = () => {
       >
         Search
       </button>
+
     </div>
   );
 };
