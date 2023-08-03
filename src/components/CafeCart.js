@@ -3,15 +3,16 @@ import CartTable from './CartTable';
 import { useCanteenProds } from '@/hooks/canteen_prods';
 import { useReadRfid } from '@/hooks/read_rfid';
 import { post } from '@/lib/axios';
+import { useUserSearchContext } from '@/contexts/usersSearchContext';
 
 const Cart = () => {
   const { data: canteen_prods } = useCanteenProds()
   const [cartItems, setCartItems] = useState([])
   const { rfidData, isScanning, scanRfid } = useReadRfid()
-
+  const { userSearchData } = useUserSearchContext()
 
   const [formData, setFormData] = useState({
-    student_id: "",
+    student_id: userSearchData?.data?.student_id,
     rfid: rfidData,
     items_cart: cartItems
   })
@@ -33,6 +34,13 @@ const Cart = () => {
       setFormData({ ...formData, rfid: rfidData })
     }
   }, [rfidData])
+
+  useEffect(() => {
+    if (userSearchData?.data?.student_id) {
+      setFormData({ ...formData, student_id: userSearchData?.data?.student_id })
+    }
+  }, [userSearchData])
+
 
   const onRemoveItem = (id) => {
     console.log(id);
