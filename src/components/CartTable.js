@@ -22,6 +22,11 @@ const CartTable = ({ cartItems, onRemoveItem }) => {
       setProductsData([])
     }
   }, [cartItems])
+  var total_price = 0;
+
+  const summation = (price) => {
+    total_price += price
+  }
 
 
   return (
@@ -32,7 +37,8 @@ const CartTable = ({ cartItems, onRemoveItem }) => {
           <tr>
             <th className="px-4 py-2 border">Item</th>
             <th className="px-4 py-2 border">Quantity</th>
-            <th className="px-4 py-2 border">Price</th>
+            <th className="px-4 py-2 border">Unit Price</th>
+            <th className="px-4 py-2 border">Net Price</th>
             <th className="px-4 py-2 border">Actions</th>
           </tr>
         </thead>
@@ -44,6 +50,7 @@ const CartTable = ({ cartItems, onRemoveItem }) => {
                 <td className="px-4 py-2 border">{prod?.name}</td>
                 <td className="px-4 py-2 border">{cartItems[ind]?.quantity}</td>
                 <td className="px-4 py-2 border">{prod?.price}</td>
+                <td className="px-4 py-2 border">{prod?.price * cartItems[ind]?.quantity}</td>
                 <td className="px-4 py-2 border">
                   <button
                     onClick={() => {
@@ -53,12 +60,14 @@ const CartTable = ({ cartItems, onRemoveItem }) => {
                     Remove
                   </button>
                 </td>
+                {summation(prod?.price * cartItems[ind]?.quantity)}
               </tr>
             ))
           }
 
         </tbody>
       </table>
+      <div>Total Price: Tk.{total_price}/-</div>
     </div>
   );
 };

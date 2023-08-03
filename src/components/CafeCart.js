@@ -62,6 +62,7 @@ const Cart = () => {
       })
         .then((res) => {
           alert(res?.data?.message)
+          setCartItems([])
         })
         .catch(error => {
           alert(error?.response?.data?.message)

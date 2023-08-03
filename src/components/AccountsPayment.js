@@ -99,7 +99,7 @@ const AccountsPayment = () => {
             min={0}
             value={formData?.amount}
             className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
-            placeholder="Enter Amount to Recharge"
+            placeholder="Enter Amount to Pay"
             required
           />
         </div>
@@ -122,7 +122,7 @@ const AccountsPayment = () => {
                 setFormData({ ...formData, submit: true })
               }}
             >
-              Recharge
+              Payment
             </button>
           }
         </div>
