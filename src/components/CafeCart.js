@@ -49,22 +49,22 @@ const Cart = () => {
     })
   }
 
+  console.log(formData)
+
   const handleSubmit = async (e) => {
     if (formData?.rfid != "" && formData?.student_id != "" && formData?.items_cart?.length > 0) {
-      console.log("Here")
       await post({
         postendpoint: "/canteen/sell", postData: formData, config: {
           headers: {
-            "Content-Type": "application/www-x-form-urlencoded"
+            "Content-Type": 'application/x-www-form-urlencoded'
           }
         }
       })
-        .then(res => {
+        .then((res) => {
           alert(res?.data?.message)
-          setCartItems([])
         })
-        .catch((error) => {
-          console.log(error?.response?.data?.message)
+        .catch(error => {
+          alert(error?.response?.data?.message)
         })
     }
   }
