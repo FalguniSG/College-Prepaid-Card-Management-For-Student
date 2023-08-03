@@ -22,7 +22,7 @@ const TransactionHistory = () => {
 
   const { data: admin_transactions, isLoading: transactionLoading, mutate: mutateTransaction } = useAdminTransactions({ queryParams: queryParams })
 
-  const { data: user_transactions, isLoading } = useUserTransaction({ postData: queryParams })
+  const { data: user_transactions, isLoading: userTransasctionLoading } = useUserTransaction({ postData: queryParams })
 
   const transaction_data = user_transactions || admin_transactions
 
